@@ -733,3 +733,70 @@
     }
   }
 }
+/* Now Playing widget */
+#now-playing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02); /* subtle */
+  border: 1px solid rgba(0,0,0,0.06);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* clickable link containing art + text */
+.now-playing-link {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* album art */
+.now-playing-art {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 64px;
+  background: linear-gradient(135deg, #f3f3f3, #e2e2e2);
+}
+
+/* text block */
+.now-playing-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* allow truncation */
+}
+
+/* title and artist */
+.now-playing-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.now-playing-artist {
+  font-size: 13px;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4px;
+  font-style: normal;
+  color: rgba(0,0,0,0.6);
+}
+
+/* small note for "not playing" */
+.now-playing--idle .now-playing-title {
+  font-weight: 600;
+  opacity: 0.9;
+}
